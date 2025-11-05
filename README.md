@@ -1,70 +1,188 @@
-# Getting Started with Create React App
+# Tugas: Asynchronous 4 - Front-End Development Part 2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplikasi web CRUD (Create, Read, Update, Delete) untuk manajemen produk dengan sistem autentikasi menggunakan JWT (JSON Web Token). Dibangun menggunakan React.js, React Bootstrap, dan Axios.
 
-## Available Scripts
+## 📋 Deskripsi Singkat
 
-In the project directory, you can run:
+Aplikasi ini adalah sistem manajemen produk sederhana yang memiliki fitur autentikasi (register & login) dan CRUD lengkap untuk data produk. Setiap user harus login terlebih dahulu untuk mengakses dashboard dan melakukan operasi CRUD.
 
-### `npm start`
+## ✨ Fitur
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔐 **Autentikasi User**
+  - Register akun baru
+  - Login dengan JWT Token
+  - Protected Routes
+  - Auto logout saat token expired
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 📦 **CRUD Produk**
+  - Create: Tambah produk baru dengan upload foto
+  - Read: Tampilkan semua produk dalam tabel
+  - Update: Edit data produk
+  - Delete: Hapus produk dengan konfirmasi
 
-### `npm test`
+- 🎨 **User Interface**
+  - Responsive design menggunakan React Bootstrap
+  - Modal untuk form input
+  - Alert notifikasi sukses/error
+  - Loading state
+  - Preview foto produk
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠️ Tech Stack
 
-### `npm run build`
+- **React.js** v19.2.0 - Frontend framework
+- **React Router DOM** v7.9.5 - Routing
+- **React Bootstrap** v2.10.10 - UI components
+- **Bootstrap** v5.3.8 - CSS framework
+- **Axios** v1.13.1 - HTTP client
+- **React Scripts** v5.0.1 - Build tools
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Persyaratan Aplikasi
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Sebelum menjalankan aplikasi, pastikan Anda sudah menginstall:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Node.js** versi 14.x atau lebih tinggi
+- **npm** 
+- **Backend API** sudah berjalan di `http://localhost:5000`
 
-### `npm run eject`
+## 🚀 How to Use / Installation dan Cara Build
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone Repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/lomanto215/latihan-frontend.git
+cd latihan-frontend
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Install Dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### 3. Konfigurasi Backend URL
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Pastikan file `src/api/api.js` sudah mengarah ke backend URL yang benar:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```javascript
+const api = axios.create({
+  baseURL: 'http://localhost:5000', 
+});
+```
 
-### Code Splitting
+### 4. Jalankan Aplikasi (Development Mode)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
+Aplikasi akan berjalan di `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 5. Build untuk Production
 
-### Making a Progressive Web App
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+File production akan tersimpan di folder `build/`
 
-### Advanced Configuration
+## 📁 Struktur Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+latihan-frontend/
+├── public/
+│   ├── index.html
+│   └── favicon.ico
+├── src/
+│   ├── api/
+│   │   └── api.js                 # Konfigurasi Axios
+│   ├── components/
+│   │   └── PrivateRoute.js        # Protected Route Component
+│   ├── pages/
+│   │   ├── Login.js               # Halaman Login
+│   │   ├── Register.js            # Halaman Register
+│   │   └── Dashboard.js           # Halaman Dashboard CRUD
+│   ├── App.js                     # Main App Component
+│   ├── index.js                   # Entry Point
+│   └── index.css                  # Global Styles
+├── package.json
+├── .gitignore
+└── README.md
+```
 
-### Deployment
+## 🎯 Cara Penggunaan
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### 1. Register Akun
+- Buka `http://localhost:3000/register`
+- Isi form: Nama Lengkap, Email, Password
+- Klik tombol **Daftar**
 
-### `npm run build` fails to minify
+### 2. Login
+- Buka `http://localhost:3000/login`
+- Isi Email dan Password
+- Klik tombol **Login**
+- Anda akan diarahkan ke Dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 3. Tambah Produk
+- Di Dashboard, klik tombol **+ Tambah Produk**
+- Isi form: Nama Produk, Stok, Harga, Deskripsi
+- Upload foto produk (JPG/PNG, max 2MB)
+- Klik **Simpan**
+
+### 4. Edit Produk
+- Klik tombol **Edit** pada produk yang ingin diubah
+- Ubah data yang diperlukan
+- Klik **Simpan**
+
+### 5. Hapus Produk
+- Klik tombol **Hapus** pada produk yang ingin dihapus
+- Konfirmasi penghapusan
+- Produk akan terhapus dari database
+
+### 6. Logout
+- Klik tombol **Logout** di navbar
+- Anda akan kembali ke halaman login
+
+## 🔗 Related Project
+
+**Backend Repository:** [https://github.com/lomanto215/backend](https://github.com/lomanto215/backend)
+
+Backend API diperlukan untuk menjalankan aplikasi ini. Pastikan backend sudah berjalan sebelum menjalankan frontend.
+
+## Introduction Our Team / Contributing
+
+Proyek ini dibuat oleh:
+- **Nama:** [Nama Anda]
+- **NIM:** [NIM Anda]
+- **Kelas:** [Kelas Anda]
+- **Mata Kuliah:** Pemrograman Asynchronous
+
+
+## Screenshots
+
+### 1. Halaman Login
+![Login Page](docs/login.png)
+
+### 2. Halaman Register
+![Register Page](docs/register.png)
+
+### 3. Dashboard - List Produk
+![Dashboard](docs/dashboard.png)
+
+### 4. Form Tambah Produk
+![Add Product](docs/add-product1.png)
+![Add Product](docs/add-product2.png)
+
+### 5. Form Edit Produk
+![Edit Product](docs/edit-product1.png)
+![Edit Product](docs/edit-product2.png)
+
+
+## Contact
+
+Jika ada pertanyaan, silakan hubungi:
+- **Email:** [triasajilomanto215@gmail.com]
+- **GitHub:** [@lomanto215](https://github.com/lomanto215)
+
+---
+
+**Trias Aji Lomanto 2025**
