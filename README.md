@@ -2,32 +2,32 @@
 
 Aplikasi web CRUD (Create, Read, Update, Delete) untuk manajemen produk dengan sistem autentikasi menggunakan JWT (JSON Web Token). Dibangun menggunakan React.js, React Bootstrap, dan Axios.
 
-## 📋 Deskripsi Singkat
+## Deskripsi Singkat
 
 Aplikasi ini adalah sistem manajemen produk sederhana yang memiliki fitur autentikasi (register & login) dan CRUD lengkap untuk data produk. Setiap user harus login terlebih dahulu untuk mengakses dashboard dan melakukan operasi CRUD.
 
-## ✨ Fitur
+## Fitur
 
-- 🔐 **Autentikasi User**
+- **Autentikasi User**
   - Register akun baru
   - Login dengan JWT Token
   - Protected Routes
   - Auto logout saat token expired
 
-- 📦 **CRUD Produk**
+- **CRUD Produk**
   - Create: Tambah produk baru dengan upload foto
   - Read: Tampilkan semua produk dalam tabel
   - Update: Edit data produk
   - Delete: Hapus produk dengan konfirmasi
 
-- 🎨 **User Interface**
+- **User Interface**
   - Responsive design menggunakan React Bootstrap
   - Modal untuk form input
   - Alert notifikasi sukses/error
   - Loading state
   - Preview foto produk
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **React.js** v19.2.0 - Frontend framework
 - **React Router DOM** v7.9.5 - Routing
@@ -36,7 +36,7 @@ Aplikasi ini adalah sistem manajemen produk sederhana yang memiliki fitur autent
 - **Axios** v1.13.1 - HTTP client
 - **React Scripts** v5.0.1 - Build tools
 
-## 📦 Persyaratan Aplikasi
+## Persyaratan Aplikasi
 
 Sebelum menjalankan aplikasi, pastikan Anda sudah menginstall:
 
@@ -44,7 +44,7 @@ Sebelum menjalankan aplikasi, pastikan Anda sudah menginstall:
 - **npm** 
 - **Backend API** sudah berjalan di `http://localhost:5000`
 
-## 🚀 How to Use / Installation dan Cara Build
+## How to Use / Installation dan Cara Build
 
 ### 1. Clone Repository
 
@@ -85,7 +85,7 @@ npm run build
 
 File production akan tersimpan di folder `build/`
 
-## 📁 Struktur Project
+## Struktur Project
 
 ```
 latihan-frontend/
@@ -109,7 +109,7 @@ latihan-frontend/
 └── README.md
 ```
 
-## 🎯 Cara Penggunaan
+## Cara Penggunaan
 
 ### 1. Register Akun
 - Buka `http://localhost:3000/register`
@@ -147,15 +147,6 @@ latihan-frontend/
 **Backend Repository:** [https://github.com/lomanto215/backend](https://github.com/lomanto215/backend)
 
 Backend API diperlukan untuk menjalankan aplikasi ini. Pastikan backend sudah berjalan sebelum menjalankan frontend.
-
-## Introduction Our Team / Contributing
-
-Proyek ini dibuat oleh:
-- **Nama:** [Nama Anda]
-- **NIM:** [NIM Anda]
-- **Kelas:** [Kelas Anda]
-- **Mata Kuliah:** Pemrograman Asynchronous
-
 
 ## Screenshots
 
