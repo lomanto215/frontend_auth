@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
@@ -9,6 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route
@@ -19,7 +20,14 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="*" element={<h3 className="text-center mt-5">404 Not Found</h3>} />
+        <Route path="*" element={
+          <div className="container text-center mt-5">
+            <h1>404</h1>
+            <h3>Page Not Found</h3>
+            <p className="text-muted">Halaman yang Anda cari tidak ditemukan</p>
+            <a href="/login" className="btn btn-primary mt-3">Kembali ke Login</a>
+          </div>
+        } />
       </Routes>
     </BrowserRouter>
   );
